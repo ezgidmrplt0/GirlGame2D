@@ -510,8 +510,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: deneme
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 847549cfdae30ff4790c3aacd1fe8fe4, type: 2}
-  m_sharedMaterial: {fileID: -2253397358647705421, guid: 847549cfdae30ff4790c3aacd1fe8fe4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 308404a38ca2e86419c58b58dd39958b, type: 2}
+  m_sharedMaterial: {fileID: 5360084685531913349, guid: 308404a38ca2e86419c58b58dd39958b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -535,8 +535,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
-  m_fontSizeBase: 0.5
+  m_fontSize: 0.4
+  m_fontSizeBase: 0.4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1001,7 +1001,7 @@ Transform:
   m_GameObject: {fileID: 1636661857}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.9477759, y: -1.2939, z: 0}
+  m_LocalPosition: {x: 3.21, y: -1.25, z: 0}
   m_LocalScale: {x: 0.23022453, y: 0.25313613, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a77603987f20e4840bc388c6a88a4712
+guid: 9dfde6c4a1baac044ae1a2ee5c782c50
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Nintendo DS BIOS
+  - MrPixel
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
