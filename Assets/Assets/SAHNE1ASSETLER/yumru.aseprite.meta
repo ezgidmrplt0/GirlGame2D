@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b129a72749ff1e14fa36bb5bfeac5fc0
+guid: 5fbcca7635016c74784188ed6a95fb52
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: saltlamp_30.06.2025
+  - name: yumru
     originalName: 
-    pivot: {x: 0.44, y: -0.06896552}
+    pivot: {x: 0.49122807, y: -0.016129032}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 25
-      height: 29
-    spriteID: f8049f646cffad44d8f147df92e73cba
+      width: 57
+      height: 62
+    spriteID: 4aefba704d5a64949a2c765847e93f19
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,24 +144,24 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1856564653
-    name: saltlamp_30.06.2025
+    guid: -974860874
+    name: yumru
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: saltlamp_30.06.2025
+    - name: yumru
       frameIndex: 0
       cellRect:
-        x: 5
-        y: 2
-        width: 25
-        height: 29
-      spriteId: f8049f646cffad44d8f147df92e73cba
+        x: 4
+        y: 1
+        width: 57
+        height: 62
+      spriteId: 4aefba704d5a64949a2c765847e93f19
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 64, y: 64}

@@ -7,11 +7,16 @@ public class esyalaraDokunmaKodları : MonoBehaviour
     public string[] interactionSentences;
     private diyalogKodları dialogController;
     private SpriteRenderer spriteRenderer;
+    private esyaYonetici esyaYonetici;
+
+    public GameObject efektImage; // Efekt image'ını Inspector’dan tanımla
+    public bool isSonEsya = false; // Bu eşya son eşya mı?
 
     void Start()
     {
         dialogController = FindObjectOfType<diyalogKodları>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        esyaYonetici = FindObjectOfType<esyaYonetici>();
     }
 
     void OnMouseDown()
@@ -19,13 +24,18 @@ public class esyalaraDokunmaKodları : MonoBehaviour
         if (dialogController != null)
         {
             dialogController.StartNewDialog(interactionSentences);
-            StartCoroutine(FadeOutAndDisable()); // Tıklanınca kaybolmaya başla
+            StartCoroutine(FadeOutAndDisable());
+
+            if (isSonEsya && efektImage != null)
+            {
+                efektImage.SetActive(true); // Efekt çalışsın
+            }
         }
     }
 
-    System.Collections.IEnumerator FadeOutAndDisable()
+    IEnumerator FadeOutAndDisable()
     {
-        float fadeDuration = 1.0f; // 1 saniyede kaybolsun
+        float fadeDuration = 1.0f;
         float currentTime = 0f;
         Color originalColor = spriteRenderer.color;
 
@@ -38,6 +48,11 @@ public class esyalaraDokunmaKodları : MonoBehaviour
         }
 
         spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
-        gameObject.SetActive(false); // Tamamen yok et
+        gameObject.SetActive(false);
+
+        if (esyaYonetici != null && !isSonEsya)
+        {
+            esyaYonetici.EsyaYokEdildi();
+        }
     }
 }
