@@ -1,36 +1,54 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class esyalaraDokunmaKodları : MonoBehaviour
 {
+    [Tooltip("Etkileşim metinleri")]
     public string[] interactionSentences;
-    private diyalogKodları dialogController;
+
+    [Tooltip("Eğer sahnede birden fazla varsa doğrudan atamak daha güvenli: (opsiyonel)")]
+    public diyalogKodları dialogController; // tercihen Inspector'dan bağla
+
     private SpriteRenderer spriteRenderer;
     private esyaYonetici esyaYonetici;
 
-    public GameObject efektImage; // Efekt image'ını Inspector’dan tanımla
-    public bool isSonEsya = false; // Bu eşya son eşya mı?
+    [Tooltip("Bu eşya son eşya mı?")]
+    public bool isSonEsya = false;
 
-    void Start()
+    private bool isProcessing = false; // tekrar tıklamayı engellemek için
+
+    void Awake()
     {
-        dialogController = FindObjectOfType<diyalogKodları>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        // Performans için FindObjectOfType'ları Awake/Start'ta yalnızca varsa al.
+        if (dialogController == null)
+        {
+            dialogController = FindObjectOfType<diyalogKodları>();
+        }
+
         esyaYonetici = FindObjectOfType<esyaYonetici>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void OnMouseDown()
     {
-        if (dialogController != null)
-        {
-            dialogController.StartNewDialog(interactionSentences);
-            StartCoroutine(FadeOutAndDisable());
+        if (isProcessing) return; // zaten işleniyor
 
-            if (isSonEsya && efektImage != null)
-            {
-                efektImage.SetActive(true); // Efekt çalışsın
-            }
+        if (dialogController == null)
+        {
+            Debug.LogError("diyalogKodları bulunamadı!");
+            return;
         }
+
+        if (spriteRenderer == null)
+        {
+            Debug.LogError("SpriteRenderer bulunamadı!");
+            return;
+        }
+
+        isProcessing = true;
+
+        dialogController.StartNewDialog(interactionSentences);
+        StartCoroutine(FadeOutAndDisable());
     }
 
     IEnumerator FadeOutAndDisable()
@@ -47,12 +65,24 @@ public class esyalaraDokunmaKodları : MonoBehaviour
             yield return null;
         }
 
+        // Tamamen şeffaf yap
         spriteRenderer.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
         gameObject.SetActive(false);
 
-        if (esyaYonetici != null && !isSonEsya)
+        if (esyaYonetici != null)
         {
-            esyaYonetici.EsyaYokEdildi();
+            if (isSonEsya)
+            {
+                esyaYonetici.SonEsyaYokEdildi();
+            }
+            else
+            {
+                esyaYonetici.EsyaYokEdildi();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("esyaYonetici bulunamadı, yok etme bildirimi yapılmadı.");
         }
     }
 }

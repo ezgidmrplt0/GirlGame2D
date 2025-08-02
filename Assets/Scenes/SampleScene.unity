@@ -332,7 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionSentences:
   - "Ahh yumruyla ne \xE7ok an\u0131m\u0131z var burada.."
-  efektImage: {fileID: 0}
+  dialogController: {fileID: 0}
   isSonEsya: 0
 --- !u!61 &250746139
 BoxCollider2D:
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionSentences:
   - "Eski odama ait en sevdi\u011Fim \u015Fey."
-  efektImage: {fileID: 0}
+  dialogController: {fileID: 0}
   isSonEsya: 0
 --- !u!61 &386251156
 BoxCollider2D:
@@ -603,8 +603,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionSentences:
   - Eski dostum..
-  efektImage: {fileID: 1176039599}
-  isSonEsya: 1
+  dialogController: {fileID: 0}
+  isSonEsya: 0
 --- !u!4 &530790246 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 5fbcca7635016c74784188ed6a95fb52, type: 3}
@@ -915,7 +915,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1549,7 +1549,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionSentences:
   - "\u015Eansl\u0131 \xE7oraplar\u0131m.."
-  efektImage: {fileID: 0}
+  dialogController: {fileID: 0}
   isSonEsya: 0
 --- !u!212 &1986880121
 SpriteRenderer:
@@ -1637,6 +1637,7 @@ MonoBehaviour:
   - {fileID: 386251152}
   - {fileID: 1986880117}
   sonEsya: {fileID: 530790243}
+  spiralGorseli: {fileID: 1176039599}
 --- !u!4 &2124573696
 Transform:
   m_ObjectHideFlags: 0
